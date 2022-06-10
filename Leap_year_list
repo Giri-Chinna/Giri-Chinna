@@ -1,0 +1,24 @@
+def leap_lst(cur_yr,num):
+    b=False
+    lst=[]
+    while not(b):
+        b=leap_year(cur_yr)
+        if b:
+            for i in range(0,num):
+                a=cur_yr
+                lst.append(a)
+                cur_yr+=4
+
+            return lst
+        cur_yr+=1
+
+def leap_year(year):
+    if year%400==0:
+        return True
+    elif year%4==0 and year%100!=0:
+       return True
+
+    return False
+
+var=leap_lst(2022,10)
+print(var)
